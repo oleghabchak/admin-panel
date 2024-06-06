@@ -1,0 +1,116 @@
+/**
+ * @license
+ *
+ * Font Family: Urbanist
+ * Designed by: Deni Anggara
+ * URL: https://www.fontshare.com/fonts/Urbanist
+ * © 2023 Indian Type Foundry
+ *
+ * Font Styles:
+ * Urbanist Light
+ * Urbanist Light Italic
+ * Urbanist Regular
+ * Urbanist Italic
+ * Urbanist Medium
+ * Urbanist Medium Italic
+ * Urbanist Bold
+ * Urbanist Bold Italic
+ * Urbanist Black
+ * Urbanist Black Italic
+ *
+*/
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../fonts/Urbanist-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}

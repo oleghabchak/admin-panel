@@ -1,0 +1,348 @@
+@pagination-prefix-cls: rc-pagination;
+
+@primary-color: #8460B3;
+@pagination-item-bg: #F5F6FA;
+@pagination-item-size: 40px;
+@pagination-item-size-sm: 40px;
+@pagination-font-family: Urbanist;
+@pagination-font-weight-active: 500;
+@pagination-item-bg-active: #F5F6FA;
+@pagination-item-link-bg: #F5F6FA;
+@pagination-item-disabled-color-active: #8460B3;
+@pagination-item-disabled-bg-active: #F5F6FA;
+@pagination-item-input-bg: #F0E6FE;
+
+.@{pagination-prefix-cls} {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-start {
+    justify-content: start;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-end {
+    justify-content: end;
+  }
+
+  &::after {
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    content: ' ';
+  }
+
+  &-total-text {
+    display: inline-block;
+    height: @pagination-item-size;
+    margin-right: 8px;
+    line-height: @pagination-item-size - 2px;
+    vertical-align: middle;
+  }
+
+  &-item {
+    display: inline-block;
+    min-width: @pagination-item-size;
+    height: @pagination-item-size;
+    margin-right: 8px;
+    font-family: @pagination-font-family;
+    line-height: @pagination-item-size - 2px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    background-color: @pagination-item-bg;
+    border: 1px solid #F0E6FE;
+    border-radius: 20px;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+
+    a {
+      display: block;
+      padding: 0 6px;
+      color: #414050;
+      transition: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      border-color: @primary-color;
+      transition: all 0.3s;
+      a {
+        color: @primary-color;
+      }
+    }
+
+    &-active {
+      font-weight: @pagination-font-weight-active;
+      background: @primary-color;
+      border-color: @primary-color;
+
+      a {
+        color: white;
+      }
+
+      &:focus,
+      &:hover {
+        border-color: #8460B3;
+        background-color: #8460B3;
+      }
+
+      &:focus a,
+      &:hover a {
+        color: white;
+      }
+    }
+  }
+
+  &-jump-prev,
+  &-jump-next {
+    outline: 0;
+
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #666;
+    }
+
+    button:after {
+      display: block;
+      content: '•••';
+    }
+  }
+
+  &-prev,
+  &-jump-prev,
+  &-jump-next {
+    margin-right: 8px;
+  }
+  &-prev,
+  &-next,
+  &-jump-prev,
+  &-jump-next {
+    display: inline-block;
+    min-width: @pagination-item-size;
+    height: @pagination-item-size;
+    color: @pagination-item-disabled-color-active;
+    font-family: @pagination-font-family;
+    line-height: @pagination-item-size;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &-prev,
+  &-next {
+    outline: 0;
+
+    button {
+      color: rgba(0, 0, 0, 0.85);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &:hover button {
+      border-color: #8460B3;
+    }
+
+    .@{pagination-prefix-cls}-item-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      text-align: center;
+      background-color: @pagination-item-link-bg;
+      border: 1px solid #F0E6FE;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    &:focus .@{pagination-prefix-cls}-item-link,
+    &:hover .@{pagination-prefix-cls}-item-link {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+
+  &-prev button:after {
+    content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0577 3.30783L5.80771 9.55783C5.7496 9.61588 5.7035 9.68481 5.67205 9.76068C5.64059 9.83656 5.62441 9.91788 5.62441 10C5.62441 10.0822 5.64059 10.1635 5.67205 10.2394C5.7035 10.3152 5.7496 10.3842 5.80771 10.4422L12.0577 16.6922C12.175 16.8095 12.334 16.8754 12.4999 16.8754C12.6657 16.8754 12.8248 16.8095 12.9421 16.6922C13.0594 16.5749 13.1252 16.4159 13.1252 16.25C13.1252 16.0842 13.0594 15.9251 12.9421 15.8078L7.13349 10L12.9421 4.19221C13.0002 4.13414 13.0462 4.0652 13.0776 3.98933C13.1091 3.91346 13.1252 3.83214 13.1252 3.75002C13.1252 3.6679 13.1091 3.58658 13.0776 3.51071C13.0462 3.43484 13.0002 3.3659 12.9421 3.30783C12.884 3.24976 12.8151 3.2037 12.7392 3.17227C12.6633 3.14085 12.582 3.12467 12.4999 3.12467C12.4178 3.12467 12.3365 3.14085 12.2606 3.17227C12.1847 3.2037 12.1158 3.24976 12.0577 3.30783Z' fill='%23414050'/%3E%3C/svg%3E%0A");
+    font-size: 36px;
+    line-height: 20px;
+    display: block;
+  }
+
+  &-next button:after {
+    content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.94229 3.30783L14.1923 9.55783C14.2504 9.61588 14.2965 9.68481 14.328 9.76068C14.3594 9.83656 14.3756 9.91788 14.3756 10C14.3756 10.0822 14.3594 10.1635 14.328 10.2394C14.2965 10.3152 14.2504 10.3842 14.1923 10.4422L7.94229 16.6922C7.82502 16.8095 7.66596 16.8754 7.5001 16.8754C7.33425 16.8754 7.17519 16.8095 7.05792 16.6922C6.94064 16.5749 6.87476 16.4159 6.87476 16.25C6.87476 16.0842 6.94064 15.9251 7.05792 15.8078L12.8665 10L7.05792 4.19221C6.99985 4.13414 6.95378 4.0652 6.92236 3.98933C6.89093 3.91346 6.87476 3.83214 6.87476 3.75002C6.87476 3.6679 6.89093 3.58658 6.92236 3.51071C6.95378 3.43484 6.99985 3.3659 7.05792 3.30783C7.11598 3.24976 7.18492 3.2037 7.26079 3.17227C7.33666 3.14085 7.41798 3.12467 7.5001 3.12467C7.58223 3.12467 7.66354 3.14085 7.73941 3.17227C7.81528 3.2037 7.88422 3.24976 7.94229 3.30783Z' fill='%23414050'/%3E%3C/svg%3E%0A");;
+    display: block;
+    font-size: 36px;
+    line-height: 20px;
+  }
+
+  &-disabled {
+    &,
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+      .@{pagination-prefix-cls}-item-link {
+        color: fade(#000, 25%);
+        border-color: #d9d9d9;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &-slash {
+    margin: 0 10px 0 5px;
+  }
+
+  &-options {
+    display: inline-block;
+    margin-left: 16px;
+    vertical-align: middle;
+
+    // IE11 css hack. `*::-ms-backdrop,` is a must have
+    @media all and (-ms-high-contrast: none) {
+      *::-ms-backdrop,
+      & {
+        vertical-align: top;
+      }
+    }
+
+    &-size-changer.rc-select {
+      display: inline-block;
+      width: auto;
+      margin-right: 8px;
+    }
+
+    &-quick-jumper {
+      display: inline-block;
+      height: 28px;
+      line-height: 28px;
+      vertical-align: top;
+
+      input {
+        width: 50px;
+        margin: 0 8px;
+      }
+    }
+  }
+
+  &-simple &-prev,
+  &-simple &-next {
+    height: @pagination-item-size-sm;
+    line-height: @pagination-item-size-sm;
+    vertical-align: top;
+    .@{pagination-prefix-cls}-item-link {
+      height: @pagination-item-size-sm;
+      background-color: transparent;
+      border: 0;
+      &::after {
+        height: @pagination-item-size-sm;
+        line-height: @pagination-item-size-sm;
+      }
+    }
+  }
+
+  &-simple &-simple-pager {
+    display: inline-block;
+    height: @pagination-item-size-sm;
+    margin-right: 8px;
+
+    input {
+      box-sizing: border-box;
+      height: 100%;
+      margin-right: 8px;
+      padding: 0 6px;
+      text-align: center;
+      background-color: @pagination-item-input-bg;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.3s;
+
+      &:hover {
+        border-color: @primary-color;
+      }
+    }
+  }
+
+  // ============================ Disabled ============================
+  &&-disabled {
+    cursor: not-allowed;
+
+    .@{pagination-prefix-cls}-item {
+      background: hsv(0, 0, 96%);
+      border-color: #d9d9d9;
+      cursor: not-allowed;
+
+      a {
+        color: fade(#000, 25%);
+        background: transparent;
+        border: none;
+        cursor: not-allowed;
+      }
+
+      &-active {
+        background: @pagination-item-disabled-bg-active;
+        border-color: transparent;
+        a {
+          color: @pagination-item-disabled-color-active;
+        }
+      }
+    }
+
+    .@{pagination-prefix-cls}-item-link {
+      color: fade(#000, 25%);
+      background: hsv(0, 0, 96%);
+      border-color: #d9d9d9;
+      cursor: not-allowed;
+    }
+
+    .@{pagination-prefix-cls}-item-link-icon {
+      opacity: 0;
+    }
+
+    .@{pagination-prefix-cls}-item-ellipsis {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .@{pagination-prefix-cls}-item {
+    &-after-jump-prev,
+    &-before-jump-next {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .@{pagination-prefix-cls}-options {
+    display: none;
+  }
+}
