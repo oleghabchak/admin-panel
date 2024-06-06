@@ -58,13 +58,13 @@ export const createAppStore = (props) => {
         });
       }
     },
-    async fetchWatchData(id: any, startOfRange: string, endOfRange: string) {
+    async fetchWatchData() {
       this.loading = true;
       try {
         const response = await apiService.fetchWatchData(
-          id,
-          startOfRange,
-          endOfRange
+          this.selectedUser.userId,
+          formatDateToAPIFormat(this.startDate),
+          formatDateToAPIFormat(this.endDate),
         );
         runInAction(() => {
           this.WeeklyStat = response.data.data?.[0];

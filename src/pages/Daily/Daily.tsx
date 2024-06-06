@@ -23,6 +23,7 @@ const Daily = observer(({}) => {
     if (store.accessToken) {
       // console.log('234STATE',)
       store.fetchGlucose();
+      store.fetchWatchData();
     }
     // console.log('DaysGlucose',toJS(store.DaysGlucose))
   }, [store.accessToken, store.endDate, selectedUser, store.measurementUnit]);
