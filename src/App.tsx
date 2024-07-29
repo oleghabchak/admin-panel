@@ -119,7 +119,7 @@ function App() {
             }
           />
           <Route
-            path="/"
+            path="/weekly"
             element={
               <>
                 <PageTitle title="Statistics | CGMMe Admin" />
@@ -148,7 +148,7 @@ function App() {
           }
         />
         <Route
-          path="/weekly"
+          path="/"
           element={
             <>
               <PageTitle title="Weekly | CGMMe Admin" />
