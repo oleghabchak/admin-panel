@@ -63,7 +63,7 @@ function App() {
             </>
           }
         /> */}
-        <Route path="/">
+        <Route path="/report">
           <Route
             index
             element={
@@ -119,7 +119,7 @@ function App() {
             }
           />
           <Route
-            path="/report"
+            path="/"
             element={
               <>
                 <PageTitle title="Statistics | CGMMe Admin" />
