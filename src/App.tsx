@@ -63,6 +63,15 @@ function App() {
             </>
           }
         /> */}
+         <Route
+          path="/"
+          element={
+            <>
+              <PageTitle title="Weekly | CGMMe Admin" />
+              <ECommerce />
+            </>
+          }
+        />
         <Route path="/report">
           <Route
             index
@@ -147,15 +156,7 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/"
-          element={
-            <>
-              <PageTitle title="Weekly | CGMMe Admin" />
-              <ECommerce />
-            </>
-          }
-        />
+       
         <Route
           path="/settings"
           element={
